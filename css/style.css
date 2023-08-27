@@ -526,7 +526,7 @@ a:focus {
     justify-content: center;
 }
 
-.feature .feature-icon::before {
+/* .feature .feature-icon::before {
     position: absolute;
     content: "";
     width: 80px;
@@ -537,9 +537,9 @@ a:focus {
     border: 2px dotted #ffffff;
     border-radius: 60px;
     z-index: 1;
-}
+} */
 
-.feature .feature-icon::after {
+/* .feature .feature-icon::after {
     position: absolute;
     content: "";
     width: 79px;
@@ -549,7 +549,7 @@ a:focus {
     background: #030f27;
     border-radius: 60px;
     z-index: 2;
-}
+} */
 
 .feature .col-md-12:nth-child(2n) .feature-icon::after {
     background: #fdbe33;
