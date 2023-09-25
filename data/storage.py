@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('application.html')
+    return render_template('./templates/application.html')
 
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
