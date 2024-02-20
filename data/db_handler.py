@@ -40,7 +40,7 @@ class DBHandler(server.BaseHTTPRequestHandler):
 
 
     def connectToDB(self) -> sqlite3.Connection:
-        return sqlite3.connect('form_data.db')
+        return sqlite3.connect('form.db')
 
 
     def parseHTTP(self):
@@ -86,8 +86,8 @@ class DBHandler(server.BaseHTTPRequestHandler):
     def start_server():
         '''starts the server'''
 
-        PORT = 8000
-        with socketserver.TCPServer(('127.0.0.1', PORT), DBHandler) as httpd:
+        PORT = 5500
+        with socketserver.TCPServer(('127.0.1', PORT), DBHandler) as httpd:
             print('Serving at port', PORT)
             httpd.serve_forever()
 
