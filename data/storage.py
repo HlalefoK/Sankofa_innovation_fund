@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('./templates/application.html')
 
-@app.route('/submit_form', methods=['POST'])
+@app.route('/submit', methods=['POST'])
 def submit_form():
     if request.method == 'POST':
         # Get form data
@@ -16,7 +16,7 @@ def submit_form():
         years = int(request.form['years'])
         revenue = int(request.form['revenue'])
         email = request.form['email']
-        company_name = request.form['name']
+        company_name = request.form['company_name']
         contact = request.form['contact']
         team = int(request.form['team'])
         description = request.form['description']

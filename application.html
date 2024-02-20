@@ -137,7 +137,13 @@
 
             <!-- Form Start -->
 
-            <form id="applicationForm" action="http://127.0.0.1:8000" method="post" enctype="multipart/form-data">
+            <!-- google sheets url: https://script.google.com/macros/s/AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk/exec -->
+            <!-- goole sheets id: AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk -->
+
+            <form id="applicationForm" 
+            action="https://script.google.com/macros/s/AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk/exec" 
+            method="POST" 
+            enctype="multipart/form-data">
 
                 <label for="category">Category:</label>
                 <select id="category" name="category">
@@ -150,7 +156,7 @@
                 </select>
 
                 <label for="business stage">Business Stage:</label>
-                <select id="business stage" name="business stage">
+                <select id="business stage" name="business_stage">
                   <option value="idea">Idea</option>
                   <option value="startup">Startup</option>
                   <option value="growth">Growth</option>
@@ -164,11 +170,11 @@
                 <label for="revenue">Annual Revenue (Rands):</label>
                 <input type="number" id="revenue" name="revenue" min="0" required>
 
-                <label for="email">Email Address</label>
+                <label for="email">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Email" required>
 
                 <label for="name">Company name</label>
-                <input type="text" id="name" name="name" placeholder="Company name" required>
+                <input type="text" id="name" name="company_name" placeholder="Company name" required>
 
                 <label for="contact">Contact number</label>
                 <input type="tel" id="contact" name="contact" placeholder="Contact number" required> 
@@ -187,12 +193,16 @@
 
                 <input type="hidden" name="_next" value="https://hlalefok.github.io/Sankofa_innovation_fund/thanks.html">
 
-                <!-- <button class="btn" type="submit" id="sendMessageButton">Submit</button> -->
                 <input class="btn" type="submit" value="Submit">
 
             </form>
             
             <!-- Form End -->
+
+            <!-- script to take me to the thank you page -->
+
+
+            <!-- end of script -->
 
 
             <!-- Footer Start -->
@@ -295,5 +305,6 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
         <!-- <script src="js/form.js"></script> -->
+
     </body>
 </html>
