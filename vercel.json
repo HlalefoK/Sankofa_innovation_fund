@@ -1,15 +1,19 @@
 {
   "version": 2,
-  "builds": [
-      {
-          "src": "*.py",
-          "use": "@liudonghua123/now-flask"
-      }
-  ],
   "routes": [
-      {
-          "src": "(.*)",
-          "dest": "main.py"
-      }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "/main.py"
+    }
+  ],
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "python3.8"
+    }
+  },
+  "env": {
+    "FLASK_ENV": "production",
+    "FLASK_APP": "main.py",
+    "FLASK_DEBUG": "0"
+  }
 }
