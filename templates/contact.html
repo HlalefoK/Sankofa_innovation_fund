@@ -6,28 +6,32 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Sankofa Innovation Fund" name="keywords">
         <meta content="Sankofa Innovation Fund" name="description">
-
+    
         <!-- Favicon -->
-        <link href="img/sankofa-01 FINAL.jpg" rel="icon">
-
+        <link rel="icon" href="{{ url_for('static', filename='img/sankofa-01 FINAL.jpg') }}">
+    
+    
         <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/slick/slick.css" rel="stylesheet">
         <link href="lib/slick/slick-theme.css" rel="stylesheet">
-
+    
         <!-- Template Stylesheet -->
-        <link href="./css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
     </head>
-
+    
     <body>
+    
         <div class="wrapper">
             <!-- Top Bar Start -->
             <div class="top-bar">
@@ -36,7 +40,8 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/sankofa-01 FINAL.jpg" alt="Logo">
+                                    <img src="{{ url_for('static', filename='img/sankofa-01 FINAL.jpg') }}" alt="Logo">
+    
                                     <!-- <h1>Sankofa</h1> -->
                                 </a>
                             </div>
@@ -96,19 +101,19 @@
             
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="{{ url_for('index')}}" class="nav-item nav-link active">Home</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About</a>
                                     <div class="dropdown-menu">
-                                        <a href="about.html" class="dropdown-item">About Us</a>
-                                        <a href="canvas.html" class="dropdown-item">Business Canvas</a>
+                                        <a href="{{ url_for('about')}}" class="dropdown-item">About Us</a>
+                                        <a href="{{ url_for('canvas')}}" class="dropdown-item">Business Canvas</a>
                                     </div>
                                 </div>
-                                <a href="service.html" class="nav-item nav-link">Focus</a>
+                                <a href="{{ url_for('service')}}" class="nav-item nav-link">Focus</a>
                                 <!-- <a href="team.html" class="nav-item nav-link">Team</a> -->
-                                <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
+                                <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Portfolio</a>
             
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="{{ url_for('contact')}}" class="nav-item nav-link">Contact</a>
                             </div>
                         </div>
                     </nav>
@@ -117,17 +122,16 @@
             <!-- Nav Bar End -->
 
             
-            
             <!-- Page Header Start -->
             <div class="page-header">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2>Application Form</h2>
+                            <h2>Contact Us</h2>
                         </div>
                         <div class="col-12">
-                            <a href="index.html">Home</a>
-                            <a href="application.html">Apply</a>
+                            <a href="{{ url_for('index')}}">Home</a>
+                            <a href="{{ url_for('contact')}}">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -135,74 +139,70 @@
             <!-- Page Header End -->
 
 
-            <!-- Form Start -->
-
-            <!-- google sheets url: https://script.google.com/macros/s/AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk/exec -->
-            <!-- goole sheets id: AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk -->
-
-            <form id="applicationForm" 
-            action="https://script.google.com/macros/s/AKfycbyQt4GXH5b7n-ua6ZjWfw3xhtCQAbUX4-ZYr1yrtGwK1RvVjP6w6OxJ1uLQ2QPFTesk/exec" 
-            method="POST" 
-            enctype="multipart/form-data">
-
-                <label for="category">Category:</label>
-                <select id="category" name="category">
-                  <option value="tech">Technology</option>
-                  <option value="retail">Retail</option>
-                  <option value="finance">Finance</option>
-                  <option value="healthcare">Healthcare</option>
-                  <option value="edutech">Edutech</option>
-                  <!-- Add more options as needed -->
-                </select>
-
-                <label for="business stage">Business Stage:</label>
-                <select id="business stage" name="business_stage">
-                  <option value="idea">Idea</option>
-                  <option value="startup">Startup</option>
-                  <option value="growth">Growth</option>
-                  <option value="established">Established</option>
-                  <!-- Add more options as needed -->
-                </select>  
-            
-                <label for="years">Years in Business:</label>
-                <input type="number" id="years" name="years" min="0" required>
-            
-                <label for="revenue">Annual Revenue (Rands):</label>
-                <input type="number" id="revenue" name="revenue" min="0" required>
-
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-
-                <label for="name">Company name</label>
-                <input type="text" id="name" name="company_name" placeholder="Company name" required>
-
-                <label for="contact">Contact number</label>
-                <input type="tel" id="contact" name="contact" placeholder="Contact number" required> 
-            
-                <label for="team">Team Size:</label>
-                <input type="number" id="team" name="team" min="1" required>
-            
-                <label for="description">Briefly describe your business:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
-            
-                <label for="funding">Amount of Funding Requested (Rands):</label>
-                <input type="number" id="funding" name="funding" min="0" required>
-            
-                <label for="documents">Upload necessary company documents (PDF):</label>
-                <input type="file" id="documents" name="documents" accept="application/pdf" required>
-
-                <!-- <input type="hidden" name="_next" value="https://hlalefok.github.io/Sankofa_innovation_fund/thanks.html"> -->
-
-                <input class="btn" type="submit" value="Submit" href="./thanks.html">
-
-            </form>
-            
-            <!-- Form End -->
-
-            <!-- script to take me to the thank you page -->
-
-
-            <!-- end of script -->
+            <!-- Contact Start -->
+            <div class="contact wow fadeInUp" action="https://formsubmit.co/info@sankofainnovation.co.za" method="post">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>Get In Touch</p>
+                        <h2>For Any Query</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="flaticon-address"></i>
+                                    <div class="contact-text">
+                                        <h2>Location</h2>
+                                        <p>164 Katherine Street, Pinmill Office Park Building 2, Strathavon, Gauteng, 2196</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="flaticon-call"></i>
+                                    <div class="contact-text">
+                                        <h2>Phone</h2>
+                                        <p>082 611 7300</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="flaticon-send-mail"></i>
+                                    <div class="contact-text">
+                                        <h2>Email</h2>
+                                        <p>info@sankofainnovation.co.za</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <div id="success"></div>
+                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div>
+                                        <input type="hidden" name="_next" value="thanks.html">
+                                        <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact End -->
 
 
             <!-- Footer Start -->
@@ -299,12 +299,11 @@
         <script src="lib/slick/slick.min.js"></script>
         
         <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+        <script src="static/mail/jqBootstrapValidation.min.js"></script>
+        <script src="static/mail/contact.js"></script>
+
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <!-- <script src="js/form.js"></script> -->
-
     </body>
 </html>

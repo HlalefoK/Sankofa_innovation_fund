@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Sankofa</title>
@@ -9,7 +8,8 @@
     <meta content="Sankofa Innovation Fund" name="description">
 
     <!-- Favicon -->
-    <link href="img/sankofa-01 FINAL.jpg" rel="icon">
+    <link rel="icon" href="{{ url_for('static', filename='img/sankofa-01 FINAL.jpg') }}">
+
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -26,10 +26,12 @@
     <link href="lib/slick/slick-theme.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
+
     <div class="wrapper">
         <!-- Top Bar Start -->
         <div class="top-bar">
@@ -38,7 +40,8 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="img/sankofa-01 FINAL.jpg" alt="Logo">
+                                <img src="{{ url_for('static', filename='img/sankofa-01 FINAL.jpg') }}" alt="Logo">
+
                                 <!-- <h1>Sankofa</h1> -->
                             </a>
                         </div>
@@ -98,19 +101,19 @@
         
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="{{ url_for('index')}}" class="nav-item nav-link active">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About</a>
                                 <div class="dropdown-menu">
-                                    <a href="about.html" class="dropdown-item">About Us</a>
-                                    <a href="canvas.html" class="dropdown-item">Business Canvas</a>
+                                    <a href="{{ url_for('about')}}" class="dropdown-item">About Us</a>
+                                    <a href="{{ url_for('canvas')}}" class="dropdown-item">Business Canvas</a>
                                 </div>
                             </div>
-                            <a href="service.html" class="nav-item nav-link">Focus</a>
+                            <a href="{{ url_for('service')}}" class="nav-item nav-link">Focus</a>
                             <!-- <a href="team.html" class="nav-item nav-link">Team</a> -->
-                            <a href="portfolio.html" class="nav-item nav-link">Portfolio</a>
+                            <a href="{{ url_for('portfolio') }}" class="nav-item nav-link">Portfolio</a>
         
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url_for('contact')}}" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
                 </nav>
@@ -118,34 +121,169 @@
         </div>
         <!-- Nav Bar End -->
 
+
+        
         <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Contact Us</h2>
+                        <h2>The Business Model Canvas</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Contact Us</a>
+                        <a href="{{ url_for('index')}}">Home</a>
+                        <a href="{{ url_for('canvas')}}">Business canvas</a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Page Header End -->
 
-
-        <!-- Contact Start -->
-
         <h1>
-            Thank you for reaching out to us, 
-            
-            <br>
-
-            we will get in touch!
+            COMING SOON!!
         </h1>
+
+
+        <!-- Canvas Start -->
         
-        <!-- Contact End -->
+        <!-- <div class="container"> -->
+            <!-- <h1>The Business Model Canvas</h1> -->
+            <!-- Canvas -->
+            <!-- <table id="bizcanvas" cellspacing="0" border="1"> -->
+              <!-- Upper part -->
+              <!-- <tr>
+                <td colspan="2" rowspan="2">
+                  <h4>Key Partners</h4>
+                  <p>Venture Capital & Business News</p>
+                  <p>Media Houses</p>
+                  <p>Independent Incubator Hubs</p>
+                  <p>Venture Capital Networks</p>
+                  <p>Other Venture Capital Companies</p>
+                  <p>
+                    Conference organisers 
+                    Entrepreneurship Hubs 
+                    Universities 
+                  </p>
+                </td>
+                <td colspan="2">
+                  <h4>Key Activities</h4>
+                  <p>Increasing Deal Flow</p>
+                  <p>Conducting Opportunity</p>
+                  <p>Assessments</p>
+                  <p>Qualifying Investment</p>
+                  <p>Acquisitions</p>
+                  <p>
+                    Facilitating Growth and <br />
+                    Maturation <br />
+                    Investment Exits<br />
+                  </p>
+                </td>
+                <td colspan="2" rowspan="2">
+                  <h4>Value Proposition</h4>
+                  <p><strong>For Qualifying Investments:</strong></p>
+                  <p>Access to seed/ start-up/ <br>
+                      later-stage/ growth or <br>
+                      buyout capital</p>
+                  <p>Access to a business support <br>
+                      services team that <br>
+                      cover areas
+                      such: <br>
+                      legal, business strategy, <br>
+                      marketing & branding, tax, <br>
+                      finance & auditing, human  <br>
+                      resources to name a few</p>
+                  <p>Access to networks within and <br>
+                      outside South Africa </p>
+                  <p>Increase in company valuation</p>
+                  <br>
+                  <p><strong>For Investors:</strong></p>
+                  <p>
+                      A potential opportunity to profit <br>
+                      significantly from diversified <br>
+                      private shareholding in Qualifying <br>
+                      Investments 
+                  </p>
+                  <p>
+                      Actively support South Africa’s <br>
+                      economic development and growth 
+                  </p>
+                </td>
+                <td colspan="2">
+                  <h4>Customer Relationship</h4>
+                  <p><strong>Qualifying Investments:</strong></p>
+                  <p>Long-term</p>
+                  <p>Partnership</p>
+                  <p>Accountability</p>
+                  <br>
+                  <p><strong>Investors:</strong></p>
+                  <p>Long term</p>
+                  <p>
+                      Co-Investment
+                  </p>
+                </td>
+                <td colspan="2" rowspan="2">
+                  <h4>Customer Segments</h4>
+                  <p>Multi-sided markets:</p>
+                  <p>Qualifying Investments</p>
+                  <p>Investors </p>
+                </td>
+              </tr>
+       -->
+              <!-- Lower part -->
+              <!-- <tr>
+                <td colspan="2">
+                  <h4>Key Resources</h4>
+                  <p>Deal Flow Resources</p>
+                  <p>Screening & Due Diligence </p>
+                  <p>Resources</p>
+                  <p>Third Party Service Providers</p>
+                  <p> Compliance
+                  </p>
+                  <p>Legal</p>
+                  <p>Internet connection </p>
+                  <p>Software</p>
+                </td>
+                <td colspan="2">
+                  <h4>Channels</h4>
+                  <p><strong>Awareness:</strong></p>
+                  <p>Website</p>
+                  <p>Google Adversiting </p>
+                  <p>LinkedIn</p>
+                  <p>Email</p>
+                  <p>Press Media</p>
+                  <p>Expos & Conferences</p>
+                  <p>Sponsoring Entrepreneurship</p>
+                  <p>Events & Competitions</p>
+                  <p><strong>Daily activities:</strong></p>
+                  <p>Email </p>
+                  <p>Monitoring system</p>
+                  <p>Quarterly meetings</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5">
+                  <h4>Cost Structure</h4>
+                  <p>Brand & Marketing Resources</p>
+                  <p>Deal Flow Resources</p>
+                  <p>Screening & Due Diligence Resources</p>
+                  <p>Compliance</p>
+                  <p>Third Party service providers</p>
+                  <p>Legal</p>
+                  <p>Internet Connection</p>
+                  <p>Office Facilities</p>
+                  <p>Software</p>
+                </td>
+                <td colspan="5">
+                  <h4>Revenue Streams</h4>
+                  <p>Investment Exits</p>
+                  <p>Dividends</p>
+                </td>
+              </tr>
+            </table> -->
+            <!-- /Canvas -->
+          <!-- </div> -->
+            
+        <!-- Canvas End -->
 
 
         <!-- Footer Start -->
@@ -192,8 +330,7 @@
                         <div class="newsletter">
                             <h2>Newsletter</h2>
                             <p>
-                                Don't miss out on the opportunity to stay ahead of the curve - subscribe to our monthly
-                                newsletter today and benefit from our investment in the latest technologies!
+                                Don't miss out on the opportunity to stay ahead of the curve - subscribe to our monthly newsletter today and benefit from our investment in the latest technologies!
                             </p>
                             <div class="form">
                                 <input class="form-control" placeholder="Email here">
@@ -217,8 +354,8 @@
                     <div class="col-md-6">
                         <p>&copy; <a href="">Sankofa Innovation Fund</a>, All Right Reserved.</p>
                     </div>
-
-
+                    
+                    
                     <div class="col-md-6">
                         <p>Designed By <a href="">Hlalefo</a></p>
                     </div>
@@ -233,21 +370,22 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/slick/slick.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easing/1.4.1/easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
+
+    <!-- Javascript loading -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/canvas.js"></script>
+  </body>
 </html>
